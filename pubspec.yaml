@@ -1,0 +1,4 @@
+name: entropy
+description: An entropy calculator in Dart.
+dependencies:
+  unittest: { sdk: unittest }
