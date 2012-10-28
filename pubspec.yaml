@@ -1,4 +1,7 @@
 name: entropy
+version: 1.0.0
 description: An entropy calculator in Dart.
+author: Kai Sellgren <kaisellgren@gmail.com>
+homepage: http://github.com/kaisellgren/Entropy
 dependencies:
   unittest: { sdk: unittest }

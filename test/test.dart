@@ -1,16 +1,22 @@
-import '../lib/entropy.dart';
+import 'package:unittest/unittest.dart';
+import 'package:entropy/entropy.dart';
 
 void main() {
-  var ideal = new List<int>();
-  for (var i = 0; i <= 255; i++) {
-    ideal.add(i);
-  }
 
-  print(Entropy.calculate(ideal));
+  test('ideal', () {
+    var ideal = new List<int>();
+    for (var i = 0; i <= 255; i++) {
+      ideal.add(i);
+    }
 
-  print(Entropy.calculate("abcdefghijklmnopqrstuvwxyz0123456789"));
+    expect(Entropy.calculate(ideal), 8.0);
+  });
 
-  var data = "The quick brown fox jumps over the lazy dog.";
+  test('simple', () {
+    expect(Entropy.calculate("abcdefghijklmnopqrstuvwxyz0123456789"), 5.1699250014423095);
 
-  print(Entropy.calculate(data));
+    var data = "The quick brown fox jumps over the lazy dog.";
+
+    expect(Entropy.calculate(data), 4.4877296299517635);
+  });
 }
